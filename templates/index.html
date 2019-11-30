@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-4 align-self-center form-group">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="">Seleccione el archivo tipo csv</label>
+                    <input class="form-control-file" type="file" name="archivo"><br>
+                    <input class="form-control btn btn-primary" type="submit">    
+                </div>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+{% endblock %}

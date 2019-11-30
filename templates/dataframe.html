@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-4 align-self-center"> 
+            <form action="/graphic" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="filename" value="{{archivo}}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="">Seleccione la columna a graficar</label>
+                    <select class="form-control" id="" name="column">
+                        {% for titulo in titulos %}
+                        <option value = "{{titulo}}">{{titulo}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Seleccione el tipo de grafica</label>
+                    <select class="form-control" id="" name="graphic_type">
+                        <option value="Linea">Linea</option>
+                        <option value="Barras">Barras</option>
+                        <option value="Pastel">Pastel</option>
+                        <option value="Puntos">Puntos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Nombre para grafica</label>
+                    <input type="text " class="form-control" name="title" placeholder="Nombre de la grafica" required><br>
+                    <button class="form-control btn btn-primary" type="submit">Solicitar grafica</button>
+                </div>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="row text-center">
+        <div class="col-6 form-group">
+            <label class="form-control" for="">Nombre de columna: {{columna}}</label>
+        </div>
+        <div class="col-6 form-group">
+            <label class="form-control" for="">Tipo de grafica: {{grafica}}</label>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col form-group">
+            <label class="form-control" for="">Titulo: {{titulo}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-8 align-self-center">
+            <img src="static/{{titulo}}.png" alt="">
+        </div>
+        <div class="col"></div>
+    </div>
+   
+{% endblock %}
