@@ -3,10 +3,10 @@
 {% block content %}
     
     <div class="row">
-        <div class="col"></div>
-        <div class="col-4 align-self-center"> 
+        <div class="col-4"> 
             <form action="/graphic" method="post" enctype="multipart/form-data">
                 <div class="form-group">
+                    <label for="">Nombre del archivo</label>
                     <input type="text" class="form-control" name="filename" value="{{archivo}}" readonly>
                 </div>
                 <div class="form-group">
@@ -33,7 +33,12 @@
                 </div>
             </form>
         </div>
-        <div class="col"></div>
+        <div class="col-8">
+            <h2>Primeros 20 datos del archivo: {{archivo}}</h2>
+            {% for table in tables %}
+                {{ table|safe }}
+            {% endfor %}
+        </div>
     </div>
     
 {% endblock %}
